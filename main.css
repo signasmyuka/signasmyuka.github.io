@@ -1,0 +1,384 @@
+:root {
+  --pink-1: #fff4f8;
+  --pink-2: #ffe1f0;
+  --accent: #ff7fb0;
+  --muted: #7a5360;
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --glass: rgba(255, 255, 255, 0.7);
+  --shadow: 0 0 20px rgba(120, 50, 90, 0.2);
+  --glass-border: rgba(230, 200, 220, 0.55);
+  --swiper-bg: url("../assets/images/prinzkuning.jpg") font-family: Inter, system-ui,
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.bg-soft {
+  background: var(--bs-body-gradient);
+  background-size: 200% 200%;
+  animation: softGradient 10s ease infinite;
+  min-height: 100vh;
+}
+
+@keyframes softGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bs-body-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  position: relative;
+  object-fit: contain;
+  padding-bottom: 1.5rem;
+  width: 7vw;
+  max-width: 60px;
+  height: auto;
+}
+
+.loader.main {
+  width: 14vw;
+  max-width: 120px;
+  margin: 0 -10px;
+}
+
+.stage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  position: relative;
+}
+
+.card-wrap {
+  width: min(1000px, 96vw);
+  background: rgba(var(--bs-body-bg-rgb), 0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(var(--bs-border-color), 0.7);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  backdrop-filter: blur(6px);
+}
+
+h1.main-title {
+  margin: 0;
+  font-family: "Helvetica Neue", serif;
+  font-weight: 700;
+  font-size: clamp(26px, 4.5vw, 46px);
+  letter-spacing: -0.02em;
+}
+p.subtitle {
+  color: var(--muted);
+  margin-top: 8px;
+  margin-bottom: 18px;
+}
+
+.mySwiper {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(var(--bs-primary-rgb), 0.3);
+  background-image: var(--swiper-bg);
+  background-size: cover;
+  transition: background-image 1.2s ease-out;
+  perspective: 1200px;
+}
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  transition: transform 10s ease-in-out;
+}
+
+.swiper-pagination-bullet {
+  background: var(--bs-dark);
+  transform: scale(0.8);
+  opacity: 0.4;
+  transition: all 1s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--bs-primary);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--bs-primary);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: rgba(var(--bs-primary-rgb), 0.9);
+}
+
+.controls {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-1 {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--bs-primary-rgb), 0.7),
+    rgba(var(--bs-primary-rgb), 0.8),
+    rgba(var(--bs-primary-rgb), 0.7)
+  );
+  color: var(--bs-light);
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(var(--bs-primary-rgb), 0.4);
+  border: none;
+}
+
+.btn-soft {
+  background: #fff;
+  color: #6b2741;
+  border-radius: 12px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 120, 170, 0.12);
+  font-weight: 600;
+}
+
+.envelope-wrap {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-direction: column;
+}
+.envelope {
+  width: 220px;
+  height: 154px;
+  cursor: pointer;
+  transition: transform 260ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 12px 32px rgba(255, 90, 140, 0.1));
+  border-radius: 10px;
+}
+.envelope:hover {
+  transform: translateY(-6px) rotate(-0.6deg);
+}
+
+.envelope.bouncy {
+  animation: nudge 2.6s infinite;
+}
+@keyframes nudge {
+  0% {
+    transform: translateY(0);
+  }
+  45% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.envelope svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 8px;
+}
+
+.modal-content {
+  background: transparent;
+  border: none;
+  overflow: visible;
+  box-shadow: none;
+}
+
+.paper-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.paper {
+  max-width: 500px;
+  width: 92vw;
+  background-image: url("../assets/images/joao-vitor-duarte-k4Lt0CjUnb0-unsplash.jpg");
+  background-size: 200%;
+  /*background: linear-gradient(180deg, #fffaf6, #fff5f0);*/
+  border-radius: 12px;
+  padding: 28px 30px;
+  box-shadow: 0 0 40px rgba(20, 10, 30, 0.08);
+  border: 1px solid rgba(220, 190, 200, 0.6);
+  margin: 0 auto;
+}
+
+.corner {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  opacity: 0.8;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 1.5s ease forwards;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.corner:hover {
+  opacity: 1;
+  transform: rotate(3deg) scale(1.05);
+}
+
+.top-left {
+  top: -15px;
+  left: -15px;
+  margin-top: 1.7rem;
+  transform: rotate(-3deg);
+}
+
+.top-middle {
+  top: -16px;
+  left: 48%;
+  margin-top: 1.4rem;
+  transform: rotate(-3deg);
+}
+
+.top-right {
+  top: -15px;
+  right: -17px;
+  margin-top: 1.6rem;
+  transform: rotate(2deg);
+}
+
+.bottom-left {
+  bottom: -15px;
+  left: -16px;
+  margin-bottom: 4rem;
+  transform: rotate(-7deg);
+}
+
+.bottom-middle {
+  bottom: -16px;
+  left: 39%;
+  margin-bottom: 4.3rem;
+}
+
+.bottom-right {
+  bottom: -15px;
+  right: -15px;
+  transform: rotate(3.5deg);
+  margin-bottom: 3.8rem;
+}
+
+.paper .to {
+  font-family: "Playfair Display", serif;
+  color: #6b2741;
+  margin-bottom: 6px;
+  font-size: 1.35rem;
+}
+
+.paper .letter-body {
+  font-family:
+    "Patrick Hand",
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 1.05rem;
+  color: #5b3f4c;
+  line-height: 1.55;
+  text-align: left;
+  white-space: pre-wrap;
+  margin-top: 10px;
+}
+
+.letter-stage {
+  transform: translateY(28px) scale(0.995);
+  opacity: 0;
+  transition:
+    transform 420ms cubic-bezier(0.2, 0.9, 0.2, 1),
+    opacity 320ms ease;
+}
+.letter-stage.revealed {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.modal-footer {
+  border-top: none;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  /*.carousel-item img {*/
+  /*  height: 220px;*/
+  /*}*/
+  .envelope {
+    width: 180px;
+    height: 128px;
+  }
+  /*.paper {*/
+  /*  padding: 20px;*/
+  /*}*/
+}
+
+#bgSparkle {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.card-wrap,
+.carousel,
+.envelope-wrap {
+  position: relative;
+  z-index: 2;
+}

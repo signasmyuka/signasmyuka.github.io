@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="For the most beautiful star in my world." />
+    <meta name="robots" content="index, follow" />
+    <title>Happy Birthday, Prinz</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link href="src/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="src/css/main.css" rel="stylesheet" />
+
+    <link rel="preload" href="src/assets/svgs/miffy-balloon.svg" as="image" />
+    <link rel="preload" href="src/assets/svgs/strawberry.svg" as="image" />
+    <link
+      rel="preload"
+      href="src/assets/images/joao-vitor-duarte-k4Lt0CjUnb0-unsplash.jpg"
+      as="image"
+    />
+
+    <script src="src/js/gsap.min.js"></script>
+    <script src="src/js/MorphSVGPlugin.min.js"></script>
+    <script src="src/js/color-modes.js"></script>
+    <script src="src/js/preloader.js"></script>
+  </head>
+  <body>
+    <div class="preloader bg-body z-3">
+      <img class="loader" src="src/assets/svgs/strawberry.svg" alt="strawberry" />
+      <img class="loader" src="src/assets/svgs/strawberry.svg" alt="strawberry" />
+      <img
+        class="loader main"
+        src="src/assets/svgs/miffy-balloon.svg"
+        alt="miffy-balloon"
+      />
+      <img class="loader" src="src/assets/svgs/strawberry.svg" alt="strawberry" />
+      <img class="loader" src="src/assets/svgs/strawberry.svg" alt="strawberry" />
+    </div>
+    <!-- sparkle canvas -->
+    <canvas id="bgSparkle"></canvas>
+
+    <div class="stage">
+      <div class="card-wrap">
+        <h1 class="main-title">
+          Happy Birthday,
+          <span class="text-primary">Princess Jazzielle</span> 💖
+        </h1>
+        <p class="subtitle">
+          a little web thing i made — photos, a song, and a letter you can open.
+        </p>
+
+        <div class="d-flex">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="src/assets/images/prinzkuning.jpg" alt="bebek" />
+              </div>
+              <div class="swiper-slide">
+                <img src="src/assets/images/us1.jpg" alt="Photo 1 of us" />
+              </div>
+              <div class="swiper-slide">
+                <img src="src/assets/images/us2.jpg" alt="Photo 2 of us" />
+              </div>
+              <div class="swiper-slide">
+                <img src="src/assets/images/us3.jpg" alt="Photo 3 of us" />
+              </div>
+              <div class="swiper-slide">
+                <img src="src/assets/images/us4.jpg" alt="Photo 4 of us" />
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="playBtn" class="btn-1">
+            Put Your Headphones On and Click Me!
+          </button>
+          <button id="pauseBtn" class="btn-soft" style="display: none">
+            <svg
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+              height="1.5em"
+              width="1.5em"
+            >
+              <path
+                fill="currentColor"
+                d="M29.25 38q-1.25 0-2.125-.875T26.25 35V13q0-1.25.875-2.125T29.25 10H35q1.25 0 2.125.875T38 13v22q0 1.25-.875 2.125T35 38ZM13 38q-1.25 0-2.125-.875T10 35V13q0-1.25.875-2.125T13 10h5.75q1.25 0 2.125.875T21.75 13v22q0 1.25-.875 2.125T18.75 38Zm16.25-3H35V13h-5.75ZM13 35h5.75V13H13Zm0-22v22Zm16.25 0v22Z"
+              />
+            </svg>
+            Pause
+          </button>
+        </div>
+
+        <div class="envelope-wrap" aria-hidden="false">
+          <div
+            id="envelope"
+            class="envelope bouncy"
+            role="button"
+            aria-label="Open the letter"
+          >
+            <svg
+              viewBox="0 0 200 140"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#fff0f7" />
+                  <stop offset="1" stop-color="#ffd6ee" />
+                </linearGradient>
+              </defs>
+              <rect
+                x="6"
+                y="26"
+                width="188"
+                height="108"
+                rx="10"
+                fill="url(#g1)"
+                stroke="#ffb6da"
+                stroke-width="2"
+              />
+              <polygon
+                points="6,26 100,86 194,26"
+                fill="#ffd6ee"
+                stroke="#ffb6da"
+                stroke-width="1.2"
+              />
+              <g transform="translate(150,90) scale(.85)">
+                <path
+                  d="M12 21s-9.5-6.9-11.6-9.3C-2.5 7.9 3.5 0 12 6.6 20.5 0 26.5 7.9 20.6 11.7 18.5 14.1 12 21 12 21z"
+                  fill="#ff6fa7"
+                />
+              </g>
+            </svg>
+          </div>
+          <div class="hint opacity-25">Tap the envelope to reveal the letter</div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bgAudio" preload="none" loop>
+      <source src="src/assets/audio/I Know a Place.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="modal fade" id="letterModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="paper-wrap">
+            <div class="paper">
+              <div class="letter-stage" id="letterStage">
+                <img
+                  class="corner top-left mr-1"
+                  src="src/assets/svgs/miffy1.svg"
+                  alt=""
+                />
+                <img
+                  class="corner top-middle"
+                  src="src/assets/svgs/miffy2.svg"
+                  alt=""
+                />
+                <img
+                  class="corner top-right ml-1"
+                  src="src/assets/svgs/miffy3.svg"
+                  alt=""
+                />
+                <img
+                  class="corner bottom-left mr-1"
+                  src="src/assets/svgs/miffy4.svg"
+                  alt=""
+                />
+                <img
+                  class="corner bottom-middle"
+                  src="src/assets/svgs/miffybosterakhir.svg"
+                  alt=""
+                />
+                <img
+                  class="corner bottom-right ml-1"
+                  src="src/assets/svgs/miffy5.svg"
+                  alt=""
+                />
+                <div class="to">To: Princess Jazzielle</div>
+                <div class="letter-body" id="letterBody">
+                  Ipsum mollit dolor eiusmod irure elit. Culpa ullamco fugiat minim do. Eu elit laboris dolore exercitation occaecat id qui eiusmod. Magna ea reprehenderit magna ad culpa dolore officia non ad eiusmod ad. Ullamco nisi minim consequat excepteur mollit. Occaecat veniam consequat ad adipisicing ut proident do Lorem qui amet.
+                  Ullamco culpa reprehenderit in sint nulla consequat commodo enim fugiat ex. Consequat do sint dolor adipisicing ad Lorem esse sit esse magna excepteur voluptate velit ullamco. Id est labore nisi sunt proident magna sint sint fugiat tempor voluptate. Ullamco eu fugiat id cillum nulla reprehenderit reprehenderit id labore. Sunt commodo cillum est pariatur magna mollit Lorem fugiat ipsum. Velit pariatur tempor veniam proident.
+                  Voluptate ipsum sit minim adipisicing elit duis enim. Eiusmod id elit id fugiat consequat quis occaecat est sit commodo ipsum do deserunt nisi. Exercitation officia excepteur do laborum anim fugiat adipisicing veniam cupidatat ad id fugiat Lorem ullamco. Lorem dolore proident officia nisi. Nostrud voluptate eiusmod labore dolore ut exercitation deserunt excepteur ea dolor sunt dolor. Anim ipsum occaecat labore nostrud eiusmod aute nisi proident. Reprehenderit ut voluptate anim nulla minim excepteur amet mollit quis pariatur.
+                  Eu eiusmod sint irure cupidatat. Qui officia esse nisi ullamco dolore non minim aliquip irure. Ullamco adipisicing deserunt sint amet.
+                  Nisi qui nisi aliquip labore reprehenderit sit qui incididunt ad labore exercitation ut id elit. Aliqua duis aliqua ex labore nulla laborum exercitation commodo laborum adipisicing ipsum nostrud. Exercitation cillum sint excepteur officia labore reprehenderit pariatur irure deserunt deserunt dolor exercitation. Ipsum veniam occaecat laboris laboris. Commodo sunt labore pariatur tempor laborum cillum do quis ut sit.
+                </div>
+                 
+                  <!--I wrote this so you’d have something to open that’s entirely yours —-->
+                  <!--no notifications, no ads, just a dumb web page and one human being who-->
+                  <!--thinks you’re brilliant. -->
+                <div class="text-center" style="margin-top: 58px">
+                  <button id="closeModalBtn" class="btn btn-1">
+                    Close & Keep the Magic
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/js/bootstrap.bundle.min.js"></script>
+    <script src="src/js/swiper-setup.js"></script>
+    <script src="src/js/audio-control.js"></script>
+    <script src="src/js/envelope-modal.js"></script>
+    <script src="src/js/sparkle.js"></script>
+  </body>
+</html>
+<!--yikes-->
